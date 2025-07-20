@@ -22,8 +22,9 @@ const DocumentList = ({ documents, onActionStart, onActionEnd, loadingDocId, onD
   const handleDocumentAction = async (doc, view = false) => {
     onActionStart(doc.id);
     try {
-      const response = await axios.post(
-        'http://localhost:5001/api/generate-pdf',
+     // MODO CORRECTO para producción
+  const API_URL = process.env.REACT_APP_API_URL;
+   axios.post(`${API_URL}/generate-pdf`, 
         { ...doc.form_data, lang: i18n.language },
         { responseType: 'blob' }
       );
