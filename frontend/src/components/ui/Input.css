@@ -1,0 +1,38 @@
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  display: flex; /* Añadido para mejor alineación interna */
+  flex-direction: column;
+  flex: 1; /* Permite que crezca en un layout flex */
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Regla específica para input y textarea dentro de input-group */
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(0, 0, 0, 0.3); /* Un poco más oscuro */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  resize: vertical; /* Permitir redimensionar verticalmente textareas */
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #00c6ff;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+}

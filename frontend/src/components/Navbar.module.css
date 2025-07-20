@@ -1,0 +1,127 @@
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  background: transparent;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+.brand:hover {
+    transform: scale(1.05);
+}
+.brand span {
+  font-size: 2rem;
+}
+
+.desktopMenu {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.mobileMenuButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.5rem;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background: #16213e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-in-out;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.navLink:hover {
+  color: white;
+  border-bottom-color: #00c6ff;
+}
+
+.navButtonRegister {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-image: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.navButtonRegister:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 157, 255, 0.4);
+}
+
+.navButtonLogout {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+.navButtonLogout:hover {
+    background-color: white;
+    color: #0f0c29;
+}
+
+.welcomeText {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .desktopMenu {
+    display: flex;
+  }
+  .mobileMenuButton {
+    display: none;
+  }
+  .mobileMenu {
+    display: none;
+  }
+}

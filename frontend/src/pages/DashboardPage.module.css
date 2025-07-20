@@ -1,0 +1,54 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column; /* Diseño en columna para móviles (stacking) */
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center; /* Centra los elementos en el layout de columna */
+}
+
+/* El formulario y la lista ocupan todo el ancho en móviles */
+.formSection, .listSection {
+  width: 100%;
+}
+
+.listSection {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 15px;
+  min-height: 400px; /* Altura mínima para que no se colapse */
+  max-height: 75vh; /* Altura máxima para permitir scroll */
+  overflow-y: auto; /* Scroll vertical si el contenido excede la altura */
+  display: flex;
+  flex-direction: column;
+}
+
+.listSection h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Media Query para pantallas de tablets y escritorio */
+@media (min-width: 1024px) {
+  .dashboardContainer {
+    flex-direction: row; /* Vuelve a un diseño en fila */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    gap: 3rem;
+  }
+  
+  .formSection {
+    flex: 1; /* El formulario toma 1 parte del espacio */
+    max-width: 500px; /* Ancho máximo para el formulario */
+    position: sticky; /* Fija el formulario al hacer scroll en la lista */
+    top: 2rem;
+  }
+  
+  .listSection {
+    flex: 1.5; /* La lista toma 1.5 partes del espacio, siendo más ancha */
+    padding: 2rem;
+  }
+}

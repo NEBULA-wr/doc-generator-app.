@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "title": "INVOICE",
+    "bill_to": "BILL TO",
+    "issue_date": "Issue Date",
+    "invoice_number": "Invoice #",
+    "table": {
+      "item": "DESCRIPTION",
+      "price": "PRICE",
+      "subtotal": "Subtotal",
+      "grand_total": "TOTAL DUE",
+      "default_item": "Service provided"
+    }
+  },
+  "backend": {
+    "invoice_filename": "invoice"
+  }
+}

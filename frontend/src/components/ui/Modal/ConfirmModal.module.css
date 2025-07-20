@@ -1,0 +1,67 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+  }
+  
+  .modal {
+    background-color: #1e1e3f;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .modal h3 {
+    margin-top: 0;
+    color: white;
+  }
+  
+  .modal p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  /* Modificamos los estilos de los botones para este contexto */
+  .actions > button {
+    padding: 0.7rem 1.5rem !important;
+    font-weight: 600 !important;
+  }
+  
+  .cancelButton {
+    background-image: none !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .cancelButton:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .confirmButton {
+    background-image: none !important;
+    background-color: #e53e3e !important; /* Rojo para confirmar acción peligrosa */
+  }
+  .confirmButton:hover {
+    background-color: #c53030 !important;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }

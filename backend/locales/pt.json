@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "title": "FATURA",
+    "bill_to": "FATURAR PARA",
+    "issue_date": "Data de Emissão",
+    "invoice_number": "Fatura Nº",
+    "table": {
+      "item": "DESCRIÇÃO",
+      "price": "PREÇO",
+      "subtotal": "Subtotal",
+      "grand_total": "TOTAL A PAGAR",
+      "default_item": "Serviço prestado"
+    }
+  },
+  "backend": {
+    "invoice_filename": "fatura"
+  }
+}

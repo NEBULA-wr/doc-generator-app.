@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.searchInput, .sortSelect {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+.searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.searchInput:focus, .sortSelect:focus {
+  outline: none;
+  border-color: #00c6ff;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.table th {
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.table td {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  vertical-align: middle;
+}
+.table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.actionButton {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+}
+.actionButton:hover {
+  color: #00c6ff;
+  transform: scale(1.1);
+}
+.actionButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.deleteButton:hover {
+  color: #ff6b6b;
+}
+
+.emptyMessage {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 3rem 2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.hideOnMobile {
+  display: none;
+}
+.mobileDetails {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 768px) {
+  .hideOnMobile {
+    display: table-cell;
+  }
+  .mobileDetails {
+    display: none;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "title": "FACTURE",
+    "bill_to": "FACTURER À",
+    "issue_date": "Date d'émission",
+    "invoice_number": "Facture n°",
+    "table": {
+      "item": "DESCRIPTION",
+      "price": "PRIX",
+      "subtotal": "Sous-total",
+      "grand_total": "TOTAL DÛ",
+      "default_item": "Service fourni"
+    }
+  },
+  "backend": {
+    "invoice_filename": "facture"
+  }
+}

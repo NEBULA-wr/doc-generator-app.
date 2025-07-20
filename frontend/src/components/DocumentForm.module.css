@@ -1,0 +1,25 @@
+.formTitle {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .formRow {
+    display: flex;
+    flex-direction: column; /* Apilado en móviles */
+    gap: 0;
+  }
+  
+  /* En pantallas más grandes, se ponen en fila */
+  @media (min-width: 500px) {
+    .formRow {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+  
+  /* Aseguramos que el botón tenga un margen superior */
+  button[type="submit"] {
+      margin-top: 1rem;
+  }
