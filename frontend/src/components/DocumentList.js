@@ -24,10 +24,10 @@ const DocumentList = ({ documents, onActionStart, onActionEnd, loadingDocId, onD
     try {
      // MODO CORRECTO para producción
   const API_URL = process.env.REACT_APP_API_URL;
-   axios.post(`${API_URL}/generate-pdf`, 
-        { ...doc.form_data, lang: i18n.language },
-        { responseType: 'blob' }
-      );
+  const response = await axios.post(`${API_URL}/generate-pdf`, 
+    { ...doc.form_data, lang: i18n.language },
+    { responseType: 'blob' }
+  );
       
       const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
       
