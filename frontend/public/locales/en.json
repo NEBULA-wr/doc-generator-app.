@@ -1,26 +1,32 @@
 {
-  "translation": {
-    "title": "INVOICE",
-    "bill_to": "BILL TO",
-    "issue_date": "Issue Date",
-    "invoice_number": "Invoice #",
-    "table": {
-      "item": "DESCRIPTION",
-      "price": "PRICE",
-      "subtotal": "Subtotal",
-      "grand_total": "TOTAL DUE",
-      "default_item": "Service provided"
-    }
-  },
-  "backend": {
-    "invoice_filename": "invoice"
-  },
+  "welcome": "Welcome to ProGen",
+  "tagline": "Document creation, simplified.",
+  "get_started": "Get Started for Free",
+  "login": "Login",
+  "register": "Register",
+  "dashboard": "Dashboard",
+  "logout": "Logout",
+  "formTitle": "Document Details",
+  "nameLabel": "Client Name",
+  "invoiceNumberLabel": "Invoice Number",
+  "amountLabel": "Amount",
+  "dateLabel": "Date",
+  "itemDescriptionLabel": "Item / Service Description",
+  "generateButton": "Generate & Save Document",
+  "generatingButton": "Generating...",
+  "error_generic": "An error occurred. Please try again.",
+  "my_documents": "My Documents",
+  "searchPlaceholder": "Search by client or file name...",
+  "sortNewest": "Newest First",
+  "sortOldest": "Oldest First",
+  "noDocuments": "You haven't generated any documents yet.",
+  "clientLabel": "CLIENT",
+  "actions": "ACTIONS",
+  "viewAction": "View",
+  "downloadAction": "Download",
+  "deleteAction": "Delete",
   "confirm_delete_title": "Confirm Deletion",
   "confirm_delete_message": "Are you sure you want to delete this document? This action cannot be undone.",
   "confirm_delete_button": "Yes, Delete",
-  "cancel_button": "Cancel",
-  "actions": "Actions",
-  "viewAction": "View",
-  "downloadAction": "Download",
-  "deleteAction": "Delete"
+  "cancel_button": "Cancel"
 }

@@ -1,18 +1,32 @@
 {
-  "translation": {
-    "title": "FATURA",
-    "bill_to": "FATURAR PARA",
-    "issue_date": "Data de Emissão",
-    "invoice_number": "Fatura Nº",
-    "table": {
-      "item": "DESCRIÇÃO",
-      "price": "PREÇO",
-      "subtotal": "Subtotal",
-      "grand_total": "TOTAL A PAGAR",
-      "default_item": "Serviço prestado"
-    }
-  },
-  "backend": {
-    "invoice_filename": "fatura"
-  }
+  "welcome": "Bem-vindo ao ProGen",
+  "tagline": "Criação de documentos, simplificada.",
+  "get_started": "Comece de graça",
+  "login": "Entrar",
+  "register": "Registrar",
+  "dashboard": "Painel",
+  "logout": "Sair",
+  "formTitle": "Detalhes do Documento",
+  "nameLabel": "Nome do Cliente",
+  "invoiceNumberLabel": "Número da Fatura",
+  "amountLabel": "Valor",
+  "dateLabel": "Data",
+  "itemDescriptionLabel": "Descrição do Item / Serviço",
+  "generateButton": "Gerar e Salvar Documento",
+  "generatingButton": "Gerando...",
+  "error_generic": "Ocorreu um erro. Por favor, tente novamente.",
+  "my_documents": "Meus Documentos",
+  "searchPlaceholder": "Pesquisar por cliente ou nome do arquivo...",
+  "sortNewest": "Mais recentes primeiro",
+  "sortOldest": "Mais antigos primeiro",
+  "noDocuments": "Você ainda não gerou nenhum documento.",
+  "clientLabel": "CLIENTE",
+  "actions": "AÇÕES",
+  "viewAction": "Ver",
+  "downloadAction": "Baixar",
+  "deleteAction": "Excluir",
+  "confirm_delete_title": "Confirmar Exclusão",
+  "confirm_delete_message": "Tem certeza de que deseja excluir este documento? Esta ação não pode ser desfeita.",
+  "confirm_delete_button": "Sim, excluir",
+  "cancel_button": "Cancelar"
 }

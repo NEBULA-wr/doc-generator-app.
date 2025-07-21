@@ -1,18 +1,32 @@
 {
-  "translation": {
-    "title": "FACTURE",
-    "bill_to": "FACTURER À",
-    "issue_date": "Date d'émission",
-    "invoice_number": "Facture n°",
-    "table": {
-      "item": "DESCRIPTION",
-      "price": "PRIX",
-      "subtotal": "Sous-total",
-      "grand_total": "TOTAL DÛ",
-      "default_item": "Service fourni"
-    }
-  },
-  "backend": {
-    "invoice_filename": "facture"
-  }
+  "welcome": "Bienvenue chez ProGen",
+  "tagline": "Création de documents, simplifiée.",
+  "get_started": "Commencer gratuitement",
+  "login": "Connexion",
+  "register": "S'inscrire",
+  "dashboard": "Tableau de bord",
+  "logout": "Déconnexion",
+  "formTitle": "Détails du document",
+  "nameLabel": "Nom du client",
+  "invoiceNumberLabel": "Numéro de facture",
+  "amountLabel": "Montant",
+  "dateLabel": "Date",
+  "itemDescriptionLabel": "Description de l'article / service",
+  "generateButton": "Générer et enregistrer",
+  "generatingButton": "Génération...",
+  "error_generic": "Une erreur est survenue. Veuillez réessayer.",
+  "my_documents": "Mes documents",
+  "searchPlaceholder": "Rechercher par client ou nom de fichier...",
+  "sortNewest": "Plus récents d'abord",
+  "sortOldest": "Plus anciens d'abord",
+  "noDocuments": "Vous n'avez pas encore généré de documents.",
+  "clientLabel": "CLIENT",
+  "actions": "ACTIONS",
+  "viewAction": "Voir",
+  "downloadAction": "Télécharger",
+  "deleteAction": "Supprimer",
+  "confirm_delete_title": "Confirmer la suppression",
+  "confirm_delete_message": "Êtes-vous sûr de vouloir supprimer ce document ? Cette action est irréversible.",
+  "confirm_delete_button": "Oui, supprimer",
+  "cancel_button": "Annuler"
 }
