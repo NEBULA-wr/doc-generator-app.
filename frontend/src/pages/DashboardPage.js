@@ -51,8 +51,7 @@ const DashboardPage = () => {
 
       const response = await axios.post(`${API_URL}/generate-pdf`, {...formData, lang}, { 
         responseType: 'blob',
-        // Añadimos un timeout para manejar servidores que tardan en despertar
-        timeout: 60000 // 60 segundos
+        timeout: 60000 // 60 segundos de tiempo de espera
       });
       
       const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
