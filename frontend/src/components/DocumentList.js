@@ -4,7 +4,7 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 import styles from './DocumentList.module.css';
 
-// --- Icon Components (no changes needed here) ---
+// --- Icon Components ---
 const EyeIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
 );
@@ -32,14 +32,12 @@ const DocumentList = ({ documents, onActionStart, onActionEnd, loadingDocId, onD
     try {
       const API_URL = process.env.REACT_APP_API_URL;
       
-      // ===== CORRECCIÓN 1: Se declara la variable 'response' =====
       const response = await axios.post(
         `${API_URL}/generate-pdf`,
         { ...doc.form_data, lang: i18n.language },
         { responseType: 'blob' }
       );
       
-      // ===== CORRECCIÓN 2: Se usa 'response.data', no 'respuesta.data' =====
       const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
       
       if (view) {
@@ -51,7 +49,8 @@ const DocumentList = ({ documents, onActionStart, onActionEnd, loadingDocId, onD
 
     } catch (error) {
       console.error("Error regenerating document:", error);
-      onError(error.response?.data?.message || t('error_generic'));
+      const errorMessage = error.response?.data?.message || error.message || t('error_generic');
+      onError(errorMessage);
     } finally {
       onActionEnd();
     }
@@ -60,7 +59,7 @@ const DocumentList = ({ documents, onActionStart, onActionEnd, loadingDocId, onD
   const filteredAndSortedDocuments = useMemo(() => {
     if (!documents) return [];
     
-    return [...documents] // Create a shallow copy to avoid mutating the original array
+    return [...documents]
       .filter(doc => 
         (doc.file_name && doc.file_name.toLowerCase().includes(searchTerm.toLowerCase())) || 
         (doc.form_data?.name && doc.form_data.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -68,7 +67,6 @@ const DocumentList = ({ documents, onActionStart, onActionEnd, loadingDocId, onD
       .sort((a, b) => {
         const dateA = new Date(a.created_at);
         const dateB = new Date(b.created_at);
-        // ===== CORRECCIÓN 3: Se comparan ambas fechas correctamente =====
         return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
       });
   }, [documents, searchTerm, sortOrder]);
