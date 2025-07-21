@@ -43,17 +43,28 @@ const DashboardPage = () => {
   const handleGenerateDocument = async (formData) => {
     const lang = i18n.language.split('-')[0];
     try {
-      const response = await axios.post('http://localhost:5001/api/generate-pdf', {...formData, lang}, { responseType: 'blob' });
+      // ===== ¡¡¡ESTA ES LA CORRECCIÓN CRUCIAL!!! =====
+      // Leemos la URL del backend desde las variables de entorno,
+      // en lugar de usar "localhost" directamente.
+      const API_URL = process.env.REACT_APP_API_URL;
+
+      const response = await axios.post(`${API_URL}/generate-pdf`, {...formData, lang}, { responseType: 'blob' });
+      // ===============================================
+
       const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
       const fileName = `invoice_${formData.invoiceNumber}.pdf`;
+      
       const { error: insertError } = await supabase.from('documentos').insert({ user_id: user.id, file_name: fileName, form_data: formData });
       if (insertError) throw insertError;
+
       saveAs(pdfBlob, fileName);
       setNotification({ message: '¡Documento generado y guardado con éxito!', type: 'success' });
       await fetchDocuments();
+
     } catch (error) {
       console.error('Error in generation process:', error);
-      setNotification({ message: `Error en la generación: ${error.message}`, type: 'error' });
+      const errorMessage = error.response?.data?.message || error.message || t('error_generic');
+      setNotification({ message: `Error en la generación: ${errorMessage}`, type: 'error' });
     }
   };
 
@@ -107,12 +118,12 @@ const DashboardPage = () => {
       </div>
       <ConfirmModal
         isOpen={isModalOpen}
-        title="Confirmar Borrado"
-        message="¿Estás seguro de que quieres borrar este documento? Esta acción no se puede deshacer."
+        title={t('confirm_delete_title')}
+        message={t('confirm_delete_message')}
         onConfirm={confirmDeleteDocument}
         onCancel={() => setIsModalOpen(false)}
-        confirmText="Sí, borrar"
-        cancelText="Cancelar"
+        confirmText={t('confirm_delete_button')}
+        cancelText={t('cancel_button')}
       />
     </>
   );
