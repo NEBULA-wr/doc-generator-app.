@@ -45,12 +45,15 @@ const DashboardPage = () => {
     try {
       const API_URL = process.env.REACT_APP_API_URL;
 
-      // Si la URL no existe, mostramos un error claro.
       if (!API_URL) {
         throw new Error("La variable de entorno REACT_APP_API_URL no está configurada.");
       }
 
-      const response = await axios.post(`${API_URL}/generate-pdf`, {...formData, lang}, { responseType: 'blob' });
+      const response = await axios.post(`${API_URL}/generate-pdf`, {...formData, lang}, { 
+        responseType: 'blob',
+        // Añadimos un timeout para manejar servidores que tardan en despertar
+        timeout: 60000 // 60 segundos
+      });
       
       const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
       const fileName = `invoice_${formData.invoiceNumber}.pdf`;
@@ -103,13 +106,6 @@ const DashboardPage = () => {
         </div>
         <div className={styles.listSection}>
           <h2>{t('my_documents')}</h2>
-          
-          {/* ===== LÍNEA DE DEPURACIÓN VISUAL ===== */}
-          <div style={{ background: '#333', color: 'white', padding: '1rem', margin: '1rem 0', borderRadius: '8px', fontFamily: 'monospace' }}>
-            <p style={{ margin: 0, fontWeight: 'bold' }}>--- DEBUG INFO ---</p>
-            <p style={{ margin: '5px 0 0 0' }}>API URL: <span style={{ color: process.env.REACT_APP_API_URL ? 'lightgreen' : 'red', fontWeight: 'bold' }}>{process.env.REACT_APP_API_URL || "VARIABLE NO ENCONTRADA"}</span></p>
-          </div>
-          {/* ======================================= */}
           
           {isFetching ? (
             <Spinner /> 
